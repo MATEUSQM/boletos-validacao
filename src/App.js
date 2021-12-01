@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import React, {Component} from 'react'
+import ES6 from '@mrmgomes/boleto-utils'
+
+class Header extends Component {
+
+  handleInput = e => {
+    if(e.keyCode === 13){
+      const valor = e.target.value
+      console.log(ES6.validarBoleto(valor, 'LINHA_DIGITAVEL'))
+    }
+  }
+  render() {
+    return (
+      <div className="App">
+        <p> BOLETO </p>
+        <input type="text" onKeyDown={(e) => this.handleInput(e)}></input>
+      </div>
+    );
+  }
+  
 }
 
-export default App;
+export default Header;
