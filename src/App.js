@@ -1,5 +1,5 @@
 
-import React, {Component} from 'react'
+import React, {Component, useState} from 'react'
 import ES6 from '@mrmgomes/boleto-utils'
 
 class Header extends Component {
